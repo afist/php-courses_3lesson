@@ -12,7 +12,7 @@
 
     <!-- Дополнение к теме -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -199,7 +199,7 @@
                 <!-- Tab panes -->
                 <div class="tab-content tabs">
                     <div role="tabpanel" class="tab-pane fade in active" id="Section1">
-                        <form class="form-horizontal" action="form-send.php" method="post">
+                        <form class="form-horizontal" id="form" action="form-send.php" method="post">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">username</label>
                                 <input type="text" name="user_name" class="form-control" id="exampleInputEmail1">
@@ -223,35 +223,66 @@
                             </div>
                         </form>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="Section2">
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">First Name</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Last Name</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-default">Sign up</button>
-                            </div>
-                        </form>
-                    </div>
+<!--                    <div role="tabpanel" class="tab-pane fade" id="Section2">-->
+<!--                        <form class="form-horizontal">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="exampleInputEmail1">First Name</label>-->
+<!--                                <input type="text" class="form-control" id="exampleInputEmail1">-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="exampleInputEmail1">Last Name</label>-->
+<!--                                <input type="text" class="form-control" id="exampleInputEmail1">-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="exampleInputEmail1">Email address</label>-->
+<!--                                <input type="email" class="form-control" id="exampleInputEmail1">-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="exampleInputPassword1">Password</label>-->
+<!--                                <input type="password" class="form-control" id="exampleInputPassword1">-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <button type="submit" class="btn btn-default">Sign up</button>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                    </div>-->
                 </div>
             </div>
 
         </div><!-- /.col-md-offset-3 col-md-6 -->
     </div><!-- /.row -->
 </div><!-- /.container -->
-<?php include_once "index.html"; ?>
+<script>
+
+    $("#form").submit(function(event){
+        event.preventDefault();
+        var serializedData = $(this).serialize();
+
+        request = $.ajax({
+            url: "form-send.php",
+            type: "post",
+            data: serializedData,
+            success(html){
+                $('.hi').html(html);
+
+            }
+        });
+        
+    })
+</script>
+<h3 class="hi" style="text-align: center"></h3>
+<?php
+
+
+
+
+
+
+
+
+
+
+
+include_once "index.html"; ?>
 </body>
 </html>
