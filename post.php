@@ -223,29 +223,7 @@
                             </div>
                         </form>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="Section2">
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">First Name</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Last Name</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-default">Sign up</button>
-                            </div>
-                        </form>
-                    </div>
+
                 </div>
             </div>
 

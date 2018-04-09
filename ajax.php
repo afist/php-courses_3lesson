@@ -256,18 +256,18 @@
 
     $("#form").submit(function(event){
         event.preventDefault();
-        var serializedData = $(this).serialize();
+        var serializedData = $(this).serialize();// собирает все данные с формы
 
         request = $.ajax({
             url: "form-send.php",
             type: "post",
             data: serializedData,
-            success(html){
-                $('.hi').html(html);
+            success(a){
+                $('.hi').html(a);
 
             }
         });
-        
+
     })
 </script>
 <h3 class="hi" style="text-align: center"></h3>
