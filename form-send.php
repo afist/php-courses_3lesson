@@ -3,12 +3,12 @@
 
 if (!empty($_POST)){
 
-    $user_name = $_POST["user_name"];
-    $password = $_POST["password"];
+    $user_name = test_input($_POST["user_name"]);
+    $password = test_input($_POST["password"]);
 }
 elseif(!empty($_GET)){
-    $user_name = $_GET["user_name"];
-    $password = $_GET["password"];
+    $user_name = test_input($_GET["user_name"]);
+    $password = test_input($_GET["password"]);
     }
 function test_input($data) {
     $data = trim($data); // удаляем пробелы с конца и начала строки
