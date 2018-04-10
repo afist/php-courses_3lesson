@@ -19,13 +19,13 @@ function test_input($data) {
 //var_dump($get);
 
 if (!empty($_GET)){
-    echo "Method GET  <br> Имя: ".$user_name."<br>Пароль: ".$password."<br>";
+    echo "Method GET;  <br> Имя: ".$user_name."<br>Пароль: ".$password."<br>";
 }
 
 
 if (!empty($_POST)){
 
-echo "Method POST <br> Имя: ".$user_name."<br>Пароль: ".$password."<br>";
+echo "Method POST; <br> Имя: ".$user_name."<br>Пароль: ".$password."<br>";
 
 }
 ?>
